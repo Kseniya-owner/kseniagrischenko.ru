@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Статьи — Ксения Грищенко, психолог</title>
+  <meta name="description" content="Статьи о партнёрских отношениях, привязанности, близости и личных границах. Психолог Ксения Грищенко, Саратов." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --burgundy: #5F0810;
+      --burgundy-light: #7a0f15;
+      --cream: #F9F9F7;
+      --cream-dark: #f0f0ec;
+      --text: #2a2a2a;
+      --text-muted: #666;
+      --border: #e0ddd8;
+      --tag-bg: #f3eded;
+      --tag-active: #5F0810;
+      --tag-text: #5F0810;
+      --tag-active-text: #F9F9F7;
+      --card-shadow: 0 2px 12px rgba(95,8,16,0.08);
+      --card-hover: 0 6px 24px rgba(95,8,16,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif', Georgia, serif;
+      background: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--burgundy);
+      color: var(--cream);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      text-decoration: none;
+      color: var(--cream);
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .logo-name {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-sub {
+      font-size: 0.72rem;
+      opacity: 0.75;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover { opacity: 1; }
+    nav a.active { opacity: 1; font-weight: 600; border-bottom: 2px solid var(--cream); padding-bottom: 2px; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-light) 100%);
+      color: var(--cream);
+      padding: 60px 24px 48px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      opacity: 0.85;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .hero-count {
+      display: inline-block;
+      margin-top: 24px;
+      background: rgba(249,249,247,0.15);
+      border: 1px solid rgba(249,249,247,0.3);
+      border-radius: 24px;
+      padding: 6px 20px;
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    /* ===== FILTERS ===== */
+    .filters-wrap {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 64px;
+      z-index: 90;
+    }
+
+    .filters-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-right: 4px;
+      white-space: nowrap;
+    }
+
+    .tag-btn {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid #d9c8c9;
+      border-radius: 20px;
+      padding: 5px 16px;
+      font-family: 'Noto Serif', Georgia, serif;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .tag-btn:hover {
+      background: #e8d5d6;
+      border-color: var(--burgundy);
+    }
+
+    .tag-btn.active {
+      background: var(--tag-active);
+      color: var(--tag-active-text);
+      border-color: var(--tag-active);
+    }
+
+    /* ===== SEARCH ===== */
+    .search-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 24px 0;
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      max-width: 420px;
+      padding: 10px 40px 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      font-family: 'Noto Serif', Georgia, serif;
+      font-size: 0.9rem;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--burgundy);
+    }
+
+    .search-box input::placeholder { color: #aaa; }
+
+    .search-icon {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+      font-size: 1rem;
+    }
+
+    /* ===== GRID ===== */
+    .grid-wrap {
+      max-width: 1100px;
+      margin: 28px auto 0;
+      padding: 0 24px 60px;
+    }
+
+    .results-info {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+      border: 1px solid var(--border);
+    }
+
+    .card:hover {
+      box-shadow: var(--card-hover);
+      transform: translateY(-3px);
+    }
+
+    .card-accent {
+      height: 4px;
+      background: var(--burgundy);
+    }
+
+    .card-body {
+      padding: 22px 22px 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .card-tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: 0.72rem;
+      font-style: italic;
+    }
+
+    .card-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .card-desc {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      font-style: italic;
+    }
+
+    .card-footer {
+      padding: 14px 22px 18px;
+      border-top: 1px solid var(--cream-dark);
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--burgundy);
+      text-decoration: none;
+      font-size: 0.87rem;
+      font-weight: 600;
+      transition: gap 0.2s;
+    }
+
+    .card-link:hover { gap: 10px; }
+
+    .card-link::after {
+      content: '→';
+      font-style: normal;
+    }
+
+    /* ===== NO RESULTS ===== */
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+      font-style: italic;
+      display: none;
+    }
+
+    /* ===== B17 BANNER ===== */
+    .b17-banner {
+      background: var(--cream-dark);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 28px 24px;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .b17-banner p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .b17-banner a {
+      display: inline-block;
+      background: var(--burgundy);
+      color: var(--cream);
+      text-decoration: none;
+      padding: 10px 28px;
+      border-radius: 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .b17-banner a:hover { background: var(--burgundy-light); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--burgundy);
+      color: var(--cream);
+      text-align: center;
+      padding: 32px 24px;
+    }
+
+    footer p {
+      font-size: 0.82rem;
+      opacity: 0.7;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: var(--cream);
+      opacity: 0.85;
+      text-decoration: underline;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 640px) {
+      nav { gap: 14px; }
+      nav a { font-size: 0.82rem; }
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 40px 16px 32px; }
+      .grid-wrap { padding: 0 16px 48px; }
+      .search-wrap { padding: 16px 16px 0; }
+      .filters-inner { padding: 12px 16px; }
+    }
+
+    @media (max-width: 420px) {
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <span class="logo-name">Ксения Грищенко</span>
+      <span class="logo-sub">психолог · отношения</span>
+    </a>
+    <nav>
+      <a href="/">Главная</a>
+      <a href="/#club">Клуб</a>
+      <a href="/articles.html" class="active">Статьи</a>
+      <a href="/#contact">Запись</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Статьи об отношениях</h1>
+  <p>Пишу о том, что происходит внутри пары и внутри человека в паре. Без осуждения, без клише, с опорой на практику.</p>
+  <span class="hero-count" id="totalCount">36 статей</span>
+</section>
+
+<!-- FILTERS -->
+<div class="filters-wrap">
+  <div class="filters-inner">
+    <span class="filter-label">Тема:</span>
+    <button class="tag-btn active" data-filter="all">Все</button>
+    <button class="tag-btn" data-filter="otnosheniya">Отношения</button>
+    <button class="tag-btn" data-filter="blizost">Близость</button>
+    <button class="tag-btn" data-filter="seks">Секс и желание</button>
+    <button class="tag-btn" data-filter="granitsy">Границы и самооценка</button>
+    <button class="tag-btn" data-filter="muzhchiny">О мужчинах</button>
+    <button class="tag-btn" data-filter="travma">Травма и боль</button>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div class="search-wrap">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Найти статью..." />
+    <span class="search-icon">🔍</span>
+  </div>
+</div>
+
+<!-- GRID -->
+<div class="grid-wrap">
+  <div class="results-info" id="resultsInfo"></div>
+  <div class="grid" id="articleGrid">
+
+    <!-- 1 -->
+    <article class="card" data-tags="otnosheniya travma">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Травма</span>
+        </div>
+        <h2 class="card-title">4 предпосылки развода: противоядие</h2>
+        <p class="card-desc">Что на самом деле разрушает пару, как распознать эти сигналы заранее и что можно сделать, пока не стало слишком поздно.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/566491/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="card" data-tags="otnosheniya">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+        </div>
+        <h2 class="card-title">Бенчинг: не становитесь запасным вариантом</h2>
+        <p class="card-desc">Почему один человек держит другого в ожидании без обязательств и как перестать быть тем, кого держат «на скамейке».</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/564207/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="card" data-tags="otnosheniya blizost">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Близость</span>
+        </div>
+        <h2 class="card-title">Как научиться доверять</h2>
+        <p class="card-desc">Доверие не возникает само по себе. Разбираю, почему оно разрушается и как его восстанавливают — шаг за шагом, без спешки.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/563472/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="card" data-tags="otnosheniya travma">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Здоровье</span>
+        </div>
+        <h2 class="card-title">Конфликт: влияние на отношения и здоровье</h2>
+        <p class="card-desc">Ссора — не только про слова. Хронические конфликты влияют на тело, нервную систему и способность пары восстанавливаться после напряжения.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/560997/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="card" data-tags="otnosheniya">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+        </div>
+        <h2 class="card-title">6 типов отношений и их влияние на жизнь</h2>
+        <p class="card-desc">Не все отношения одинаковы. Разбираю шесть моделей, в которые мы попадаем, и то, как каждая из них меняет нас изнутри.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/559628/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="card" data-tags="otnosheniya">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+        </div>
+        <h2 class="card-title">Топ-5 заблуждений об отношениях</h2>
+        <p class="card-desc">Убеждения, которые кажутся очевидными, но на практике разрушают близость. Откуда они берутся и как с ними работать.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/557673/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 7 -->
+    <article class="card" data-tags="otnosheniya travma">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Безопасность</span>
+        </div>
+        <h2 class="card-title">Финансовое насилие: как распознать</h2>
+        <p class="card-desc">Один из наименее обсуждаемых видов контроля в паре. Как он выглядит изнутри и почему его так сложно назвать своим именем.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/557598/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 8 -->
+    <article class="card" data-tags="otnosheniya travma">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Расставание</span>
+        </div>
+        <h2 class="card-title">Я скучаю по бывшему. Что делать</h2>
+        <p class="card-desc">Тоска по прошлым отношениям не означает, что нужно возвращаться. Разбираю, что стоит за этим чувством и как с ним обходиться.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/556687/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 9 -->
+    <article class="card" data-tags="otnosheniya travma">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Измена</span>
+        </div>
+        <h2 class="card-title">Измена: конец истории или новое начало</h2>
+        <p class="card-desc">Предательство разрушает доверие, но не всегда разрушает пару. О том, когда после измены есть смысл продолжать, а когда нет.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/555790/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card" data-tags="seks">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Секс и желание</span>
+        </div>
+        <h2 class="card-title">11 вопросов о сексе, которые вы стеснялись задать</h2>
+        <p class="card-desc">Честные ответы на вопросы, которые редко звучат вслух. Без стыда, без морализаторства, с опорой на психологию и практику.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/553539/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 11 -->
+    <article class="card" data-tags="otnosheniya blizost">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Близость</span>
+        </div>
+        <h2 class="card-title">7 способов укрепить брак</h2>
+        <p class="card-desc">Не про романтические жесты, а про реальные привычки, которые удерживают близость в долгосрочных отношениях.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/552482/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 12 -->
+    <article class="card" data-tags="otnosheniya blizost">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Привязанность</span>
+        </div>
+        <h2 class="card-title">Ваш стиль привязанности</h2>
+        <p class="card-desc">Тревожный, избегающий, надёжный. Как стиль привязанности формируется в детстве и почему он управляет вашими взрослыми отношениями.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/551287/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 13 -->
+    <article class="card" data-tags="otnosheniya blizost">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Привязанность</span>
+        </div>
+        <h2 class="card-title">Привязанность и отношения</h2>
+        <p class="card-desc">Почему теория привязанности — это не просто научный термин, а ключ к пониманию того, почему вы ведёте себя именно так в паре.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/550316/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 14 -->
+    <article class="card" data-tags="otnosheniya travma granitsy">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Границы</span>
+        </div>
+        <h2 class="card-title">Как избавиться от обиды: стратегии</h2>
+        <p class="card-desc">Обида — не слабость и не злопамятность. Разбираю, откуда она берётся, что с ней делать и почему «просто забыть» не работает.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/548706/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 15 -->
+    <article class="card" data-tags="otnosheniya blizost">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Близость</span>
+        </div>
+        <h2 class="card-title">7 неудобных вопросов, которые важно задать партнёру</h2>
+        <p class="card-desc">Разговоры, которые откладывают годами. Почему именно они определяют совместимость и как начать их без ощущения допроса.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/548174/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 16 -->
+    <article class="card" data-tags="otnosheniya granitsy">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Границы</span>
+        </div>
+        <h2 class="card-title">Манипуляции в отношениях: что делать</h2>
+        <p class="card-desc">Как распознать манипулятивные паттерны в паре, не превращая партнёра во врага, и что с этим знанием делать дальше.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/545425/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 17 -->
+    <article class="card" data-tags="granitsy">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Границы и самооценка</span>
+        </div>
+        <h2 class="card-title">Как уверенно отстаивать свои потребности</h2>
+        <p class="card-desc">Говорить о себе без извинений и без агрессии — навык, которому можно научиться. Практические инструменты из работы с клиентами.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/543525/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 18 -->
+    <article class="card" data-tags="otnosheniya travma granitsy">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Безопасность</span>
+        </div>
+        <h2 class="card-title">Признаки того, что вы в абьюзивных отношениях</h2>
+        <p class="card-desc">Не всегда это выглядит очевидно. Разбираю тонкие признаки, которые сложно заметить изнутри, и объясняю, почему так сложно уйти.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/541953/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 19 -->
+    <article class="card" data-tags="otnosheniya blizost">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Близость</span>
+        </div>
+        <h2 class="card-title">5 признаков здоровых отношений</h2>
+        <p class="card-desc">Здоровые отношения не идеальны и не безоблачны. Разбираю, по каким реальным признакам можно понять, что вам хорошо вместе.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/537646/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 20 -->
+    <article class="card" data-tags="otnosheniya blizost muzhchiny">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">О мужчинах</span>
+        </div>
+        <h2 class="card-title">Почему он молчит, а она не может остановиться</h2>
+        <p class="card-desc">Классическая пара в конфликте: один замолкает, другая говорит без остановки. Почему так устроено и как это разорвать без жертв.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/894888/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 21 -->
+    <article class="card" data-tags="granitsy otnosheniya">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Границы и самооценка</span>
+          <span class="card-tag">Отношения</span>
+        </div>
+        <h2 class="card-title">Почему ты удобная и поэтому не счастлива в отношениях</h2>
+        <p class="card-desc">Удобность — это не добродетель, если за ней стоит страх потерять отношения. О том, как привычка подстраиваться лишает близости.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/889370/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 22 -->
+    <article class="card" data-tags="seks otnosheniya">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Секс и желание</span>
+          <span class="card-tag">Отношения</span>
+        </div>
+        <h2 class="card-title">5 признаков, что дело не в либидо, а в отношениях</h2>
+        <p class="card-desc">Когда сексуальное желание снижается, первая мысль — «что-то со мной не так». Но чаще дело не в теле, а в том, что происходит между вами.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/853642/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 23 -->
+    <article class="card" data-tags="muzhchiny otnosheniya">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">О мужчинах</span>
+          <span class="card-tag">Отношения</span>
+        </div>
+        <h2 class="card-title">Про мужчин, роли и баланс</h2>
+        <p class="card-desc">Сколько ожиданий висит на мужчине одновременно — и как это давление влияет на него и на пару. Взгляд без идеализации и без обвинений.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/842457/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 24 -->
+    <article class="card" data-tags="otnosheniya blizost">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Привязанность</span>
+        </div>
+        <h2 class="card-title">7 признаков, что вы в зависимых отношениях</h2>
+        <p class="card-desc">Зависимость в паре маскируется под любовь и преданность. Разбираю признаки, которые на первый взгляд кажутся нормой.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/828176/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 25 -->
+    <article class="card" data-tags="granitsy">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Границы и самооценка</span>
+        </div>
+        <h2 class="card-title">Магия личных границ: обретение себя через внутренний диалог</h2>
+        <p class="card-desc">Граница — не стена. Она начинается с умения слышать себя. О том, как внутренний диалог помогает выстроить здоровые отношения с миром.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/803842/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 26 -->
+    <article class="card" data-tags="granitsy">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Границы и самооценка</span>
+        </div>
+        <h2 class="card-title">Вы — хорошая или виноватая?</h2>
+        <p class="card-desc">Чувство вины у матерей — во многом культурный конструкт. Почему «хорошесть» не должна стоить вам себя самой и своего права на несогласие.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/787159/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 27 -->
+    <article class="card" data-tags="blizost otnosheniya">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Близость</span>
+          <span class="card-tag">Отношения</span>
+        </div>
+        <h2 class="card-title">Цифровое одиночество: почему вы вместе, но не чувствуете близости</h2>
+        <p class="card-desc">Они физически рядом, но психически — в разных вселенных. О том, как гаджеты создают иллюзию контакта вместо настоящего.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/770015/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 28 -->
+    <article class="card" data-tags="blizost otnosheniya">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Близость</span>
+          <span class="card-tag">Отношения</span>
+        </div>
+        <h2 class="card-title">Мы как соседи: почему исчезла близость и что делать</h2>
+        <p class="card-desc">Когда страсть уходит и остаётся быт. Как пара превращается в сожителей и можно ли вернуть то, что было раньше.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/761223/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 29 -->
+    <article class="card" data-tags="granitsy">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Границы и самооценка</span>
+        </div>
+        <h2 class="card-title">Что мешает вам просто сказать «спасибо»</h2>
+        <p class="card-desc">Отказ от комплиментов — не скромность. Разбираю, что стоит за неумением принимать похвалу и почему это ворует вашу уверенность.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/662042/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 30 -->
+    <article class="card" data-tags="otnosheniya blizost">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Одиночество</span>
+        </div>
+        <h2 class="card-title">Почему вы до сих пор одиноки</h2>
+        <p class="card-desc">Не потому что «недостаточно хороши». Три психологические причины одиночества, о которых не говорят в обычных статьях про отношения.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/658583/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 31 -->
+    <article class="card" data-tags="muzhchiny">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">О мужчинах</span>
+        </div>
+        <h2 class="card-title">Мужские табу: о чём молчат даже с психологом</h2>
+        <p class="card-desc">Мужские «нельзя» остаются под замком не потому что их меньше, а потому что цена признания выше. О том, что скрыто за внешней сдержанностью.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/653183/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 32 -->
+    <article class="card" data-tags="seks">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Секс и желание</span>
+        </div>
+        <h2 class="card-title">Как стресс влияет на либидо</h2>
+        <p class="card-desc">Стресс — один из главных разрушителей сексуальной жизни. Разбираю механизм и рассказываю, что можно сделать, чтобы вернуть страсть и гармонию.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/630577/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 33 -->
+    <article class="card" data-tags="travma">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Травма и боль</span>
+        </div>
+        <h2 class="card-title">Насилие в детстве: влияние на взрослую жизнь</h2>
+        <p class="card-desc">Детская травма субъективна и глубоко индивидуальна. Как ранний опыт формирует паттерны во взрослых отношениях и почему это важно понимать.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/573468/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 34 -->
+    <article class="card" data-tags="otnosheniya granitsy">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Границы и самооценка</span>
+        </div>
+        <h2 class="card-title">Стандарты ваших отношений низки: 3 признака</h2>
+        <p class="card-desc">Когда человек снижает ожидания от партнёра, он думает, что проявляет мудрость. На деле — теряет себя в краткосрочной и долгосрочной перспективе.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/571210/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 35 -->
+    <article class="card" data-tags="otnosheniya travma">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Измена</span>
+        </div>
+        <h2 class="card-title">Почему изменяют партнёрам, которых любят</h2>
+        <p class="card-desc">Неверность — не всегда результат плохих отношений. Разбираю, какие внутренние механизмы стоят за изменой даже в любящей паре.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/568598/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+    <!-- 36 -->
+    <article class="card" data-tags="otnosheniya travma blizost">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="card-tag">Отношения</span>
+          <span class="card-tag">Сценарии</span>
+        </div>
+        <h2 class="card-title">Вы снова выбрали его. Просто с другим именем</h2>
+        <p class="card-desc">Новый мужчина, другой характер, но через год складывается та же картина. Почему так происходит и где живёт сценарий, который управляет выбором.</p>
+      </div>
+      <div class="card-footer">
+        <a class="card-link" href="https://www.b17.ru/article/911531/" target="_blank" rel="noopener">Читать на b17</a>
+      </div>
+    </article>
+
+  </div><!-- /grid -->
+
+  <div class="no-results" id="noResults">
+    По вашему запросу ничего не найдено. Попробуйте другое слово или сбросьте фильтр.
+  </div>
+</div>
+
+<!-- B17 BANNER -->
+<div class="b17-banner">
+  <p>На b17.ru опубликовано более 135 статей. Посмотреть все публикации автора:</p>
+  <a href="https://www.b17.ru/grischenko_psy/" target="_blank" rel="noopener">Все статьи на b17.ru</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    Ксения Грищенко &nbsp;·&nbsp; психолог по отношениям &nbsp;·&nbsp; Саратов<br />
+    ИНН 644922265732 &nbsp;·&nbsp; НПД<br />
+    <a href="/privacy.html">Политика конфиденциальности</a>
+  </p>
+</footer>
+
+<script>
+  const cards = Array.from(document.querySelectorAll('.card'));
+  const filterBtns = document.querySelectorAll('.tag-btn');
+  const searchInput = document.getElementById('searchInput');
+  const noResults = document.getElementById('noResults');
+  const resultsInfo = document.getElementById('resultsInfo');
+  const totalCount = document.getElementById('totalCount');
+
+  let currentFilter = 'all';
+  let currentSearch = '';
+
+  function normalize(str) {
+    return str.toLowerCase().replace(/ё/g, 'е');
+  }
+
+  function applyFilters() {
+    let visible = 0;
+
+    cards.forEach(card => {
+      const tags = card.dataset.tags || '';
+      const title = normalize(card.querySelector('.card-title').textContent);
+      const desc = normalize(card.querySelector('.card-desc').textContent);
+      const tagText = normalize(card.querySelector('.card-tags').textContent);
+
+      const matchFilter = currentFilter === 'all' || tags.split(' ').includes(currentFilter);
+      const matchSearch = !currentSearch || title.includes(normalize(currentSearch)) || desc.includes(normalize(currentSearch)) || tagText.includes(normalize(currentSearch));
+
+      if (matchFilter && matchSearch) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+
+    if (currentSearch || currentFilter !== 'all') {
+      resultsInfo.textContent = 'Найдено статей: ' + visible;
+    } else {
+      resultsInfo.textContent = '';
+    }
+
+    totalCount.textContent = visible + ' ' + pluralStat(visible);
+  }
+
+  function pluralStat(n) {
+    if (n % 10 === 1 && n % 100 !== 11) return 'статья';
+    if (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)) return 'статьи';
+    return 'статей';
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', () => {
+    currentSearch = searchInput.value.trim();
+    applyFilters();
+  });
+
+  applyFilters();
+</script>
+
+</body>
+</html>
